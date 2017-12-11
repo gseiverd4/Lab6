@@ -295,7 +295,7 @@ public class BlackJackController implements Initializable {
 				toPoint.getY() / 3, toPoint.getX(), toPoint.getY()));
 		// path.getElements().add(new CubicCurveTo(0, 120, 0, 240, 380, 240));
 		PathTransition pathTransition = new PathTransition();
-		pathTransition.setDuration(Duration.millis(750));
+		pathTransition.setDuration(Duration.millis(1000));
 		pathTransition.setPath(path);
 		pathTransition.setNode(img);
 		pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
@@ -308,10 +308,10 @@ public class BlackJackController implements Initializable {
 
 	private ScaleTransition CreateScaleTransition(ImageView img) {
 		ScaleTransition st = new ScaleTransition(Duration.millis(iAnimationLength), img);
-		st.setByX(.25f);
-		st.setByY(.25f);
-		st.setCycleCount((int) 1f);
-		st.setAutoReverse(true);
+		st.setByX(4f);
+		st.setByY(4f);
+		st.setCycleCount((int) .75f);
+		st.setAutoReverse(false);
 
 		return st;
 	}
@@ -320,7 +320,7 @@ public class BlackJackController implements Initializable {
 
 		RotateTransition rotateTransition = new RotateTransition(Duration.millis(iAnimationLength / 2), img);
 		rotateTransition.setByAngle(180F);
-		rotateTransition.setCycleCount(2);
+		rotateTransition.setCycleCount(5);
 		rotateTransition.setAutoReverse(false);
 
 		return rotateTransition;
